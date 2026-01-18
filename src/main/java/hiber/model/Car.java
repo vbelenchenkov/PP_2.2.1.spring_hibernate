@@ -8,8 +8,7 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private long id;
+    private Long id;
 
     @Column(name = "model")
     private String model;
@@ -18,7 +17,6 @@ public class Car {
     private int series;
 
     @OneToOne(mappedBy = "car", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @Column(name= "user")
     private User user;
 
     public Car() {}
@@ -27,6 +25,12 @@ public class Car {
         this.model = model;
         this.series = series;
     }
+
+
+    public Long getId() {
+        return id;
+    }
+
 
     public String getModel() {
         return model;
@@ -55,8 +59,7 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "id=" + id +
-                ", model='" + model + '\'' +
+                "model='" + model + '\'' +
                 ", series=" + series +
                 '}';
     }

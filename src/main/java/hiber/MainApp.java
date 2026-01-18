@@ -27,33 +27,25 @@ public class MainApp {
       userService.add(new User("User3", "Lastname3", "user3@mail.ru", car3));
       userService.add(new User("User4", "Lastname4", "user4@mail.ru", car4));
 
-//      List<User> users = userService.listUsers();
-//      for (User user : users) {
-//         System.out.println("Id = "+user.getId());
-//         System.out.println("First Name = "+user.getFirstName());
-//         System.out.println("Last Name = "+user.getLastName());
-//         System.out.println("Email = "+user.getEmail());
-//         if (user.getCar() != null) {
-//             System.out.println("Car Model = " + user.getCar().getModel());
-//             System.out.println("Car Series = " + user.getCar().getSeries());
-//         }
-//         System.out.println();
-//      }
-//
-//      String searchModel = "Toyota";
-//      int searchSeries = 789;
-//
-//      User user = userService.getUserByCar(searchModel, searchSeries);
-//      if(user != null) {
-//          System.out.println("User " + user.getFirstName() + " is having the car: " + searchModel);
-//          System.out.println("Id = " + user.getId());
-//          System.out.println("First name = " + user.getFirstName());
-//          System.out.println("Last name = " + user.getLastName());
-//          System.out.println("email = " + user.getEmail());
-//      } else {
-//          System.out.println("The user with car model: " + searchModel
-//                  + " and the car series: " + searchSeries + " has not be found");
-//      }
+      List<User> users = userService.listUsers();
+      for (User user : users) {
+          System.out.println(user);
+         if (user.getCar() != null) {
+             System.out.println(user.getCar());
+         }
+         System.out.println();
+      }
+
+      String searchModel = "Toyota";
+      int searchSeries = 789;
+
+      User user = userService.getUserByCar(searchModel, searchSeries);
+      if(user != null) {
+          System.out.println(user + " is having the car: " + searchModel + ", " +searchSeries);
+      } else {
+          System.out.println("The user with car model: " + searchModel
+                  + " and the car series: " + searchSeries + " has not be found");
+      }
       context.close();
    }
 }
