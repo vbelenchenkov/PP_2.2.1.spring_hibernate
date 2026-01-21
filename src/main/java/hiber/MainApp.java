@@ -27,7 +27,7 @@ public class MainApp {
       userService.addUser(new User("User3", "Lastname3", "user3@mail.ru", car3));
       userService.addUser(new User("User4", "Lastname4", "user4@mail.ru", car4));
 
-      List<User> users = userService.listUsers();
+      List<User> users = userService.findUsers();
       for (User user : users) {
           System.out.println(user);
          if (user.getCar() != null) {
